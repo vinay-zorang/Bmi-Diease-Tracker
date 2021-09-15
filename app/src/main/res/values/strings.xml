@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">BmiDieasesTracker</string>
     <string name="please_wait">Please wait..</string>
+    <string name="session_expired">Session Expired</string>
+    <string name="ok">OK</string>
+    <string name="welcome_text">BMI Disease Tracker</string>
+    <string name="connections">Connections</string>
+    <string name="applications">Application</string>
+    <string name="devices">Devices</string>
+    <string name="choose_one_of_the_apps">Choose one of the apps</string>
+    <string name="connect">Connect</string>
+    <string name="google_fit">Google Fit</string>
+    <string name="samsung_h">Samsung H</string>
+    <string name="mi_fit">Mi Fit</string>
+    <string name="garmin_c">Garmin C</string>
 </resources>

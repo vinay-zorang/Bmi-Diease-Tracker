@@ -20,7 +20,4 @@ object ApiModule {
         return BaseRepository(retrofit)
     }
 
-
-
-
 }

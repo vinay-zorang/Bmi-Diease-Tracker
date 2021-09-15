@@ -1,11 +1,17 @@
 package com.techskaud.bmidieasestracker
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+import com.example.woohoo.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class MainActivity : BaseActivity() {
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
     }
+
+    override fun onLayoutCreated() {
+
+    }
+
 }

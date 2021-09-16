@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import com.techskaud.bmidieasestracker.R
+import com.techskaud.bmidieasestracker.utilities.ModelObject
 import com.wh.woohoo.utils.extensionFunction.navigateWithId
 import kotlinx.android.synthetic.main.waring_screen_three.view.*
 

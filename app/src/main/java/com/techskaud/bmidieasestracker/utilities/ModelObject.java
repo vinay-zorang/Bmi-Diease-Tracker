@@ -1,4 +1,4 @@
-package com.techskaud.bmidieasestracker.ui.fragment.onboarding_screen;
+package com.techskaud.bmidieasestracker.utilities;
 
 import com.techskaud.bmidieasestracker.R;
 

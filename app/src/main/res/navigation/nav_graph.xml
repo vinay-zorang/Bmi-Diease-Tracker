@@ -12,20 +12,32 @@
         tools:layout="@layout/splash_fragment"
         >
         <action
-            android:id="@+id/action_splashFragment_to_dataFragment"
+            android:id="@+id/action_splashFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true"
             app:enterAnim="@anim/pop_enter"
             app:exitAnim="@anim/exit"
             />
-        <action
-            android:id="@+id/action_splashFragment_to_connectionsFragment"
-            app:destination="@id/connectionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/connectionsFragment"
         android:name="com.techskaud.bmidieasestracker.ui.fragment.ConnectionsFragment"
         android:label="ConnectionsFragment" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.techskaud.bmidieasestracker.ui.fragment.onboarding_screen.OnBoardingFragment"
+        android:label="OnBoardingFragment" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_connectionsFragment"
+            app:destination="@id/connectionsFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/pop_enter"
+            app:exitAnim="@anim/exit"
+            />
+    </fragment>
 
 </navigation>

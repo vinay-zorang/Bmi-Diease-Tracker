@@ -13,4 +13,12 @@
     <string name="samsung_h">Samsung H</string>
     <string name="mi_fit">Mi Fit</string>
     <string name="garmin_c">Garmin C</string>
+    <string name="warning">Warning!</string>
+    <string name="please_read_the_following">(Please read the following)</string>
+    <string name="first_screen_warning"><font color="#FFCED1D1">Our service is not a medical service.</font> \n\nOur services are second / third opinions based on artificial intelligence algorithms and statistics. We provide diagnostics only of the likelihood of developing diseases based on data on the health status of people with similar parameters.</string>
+    <string name="second_screen_warning"><font color="#FFCED1D1">Our service is not a medical service.</font> \n\nOur services service is not a substitute for professional medical care.if you have or suspect that may you have health problems,please consult your doctor.</string>
+    <string name="third_screen_warning"><font color="#FFCED1D1">Our service is not a medical service.</font> \n\nConsult a specialist for advice. The information provided in this application is for informational purpose only and should not be used for diagnosis or treatment.</string>
+    <string name="come_in">Come In</string>
+    <string name="don_t_show_again_show">Don\'t show again show  </string>
+
 </resources>

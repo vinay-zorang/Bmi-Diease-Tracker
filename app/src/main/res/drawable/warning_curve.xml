@@ -7,9 +7,9 @@
         android:bottom="-100dp"
         android:left="-100dp"
         android:right="-100dp"
-        android:top="170dp">
+        android:top="0dp">
         <shape android:shape="oval">
-            <solid android:color="@color/blue" />
+            <solid android:color="@color/blue_light" />
         </shape>
     </item>
 </layer-list>

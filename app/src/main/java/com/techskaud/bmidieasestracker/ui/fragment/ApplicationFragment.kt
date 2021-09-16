@@ -4,9 +4,8 @@ import android.view.View
 import com.example.woohoo.base.BaseFragment
 import com.techskaud.bmidieasestracker.R
 import kotlinx.android.synthetic.main.application_fragment.*
-import kotlinx.android.synthetic.main.application_fragment.view.*
 
-class ApplicationFragment : BaseFragment(){
+class ApplicationFragment : BaseFragment() {
 
 
     override fun getLayoutID(): Int {
@@ -14,21 +13,21 @@ class ApplicationFragment : BaseFragment(){
     }
 
     override fun onCreateView() {
-            init()
-            clickEvents()
+        init()
+        clickEvents()
     }
 
-    fun init(){
+    fun init() {
 
     }
 
-    fun clickEvents(){
-      llGoogleFit.setOnClickListener {
-          imgGoogleFitSelected.visibility = View.VISIBLE
-          imgGarminSelected.visibility = View.GONE
-          imgsamsungFitSelected.visibility = View.GONE
-          imgMiFitSelected.visibility = View.GONE
-      }
+    fun clickEvents() {
+        llGoogleFit.setOnClickListener {
+            imgGoogleFitSelected.visibility = View.VISIBLE
+            imgGarminSelected.visibility = View.GONE
+            imgsamsungFitSelected.visibility = View.GONE
+            imgMiFitSelected.visibility = View.GONE
+        }
         llSamsungFit.setOnClickListener {
             imgGoogleFitSelected.visibility = View.GONE
             imgGarminSelected.visibility = View.GONE
@@ -41,7 +40,6 @@ class ApplicationFragment : BaseFragment(){
             imgsamsungFitSelected.visibility = View.GONE
             imgMiFitSelected.visibility = View.VISIBLE
         }
-
         llGarminC.setOnClickListener {
             imgGoogleFitSelected.visibility = View.GONE
             imgGarminSelected.visibility = View.VISIBLE

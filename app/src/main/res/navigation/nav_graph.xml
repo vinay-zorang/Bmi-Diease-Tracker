@@ -24,7 +24,11 @@
     <fragment
         android:id="@+id/connectionsFragment"
         android:name="com.techskaud.bmidieasestracker.ui.fragment.ConnectionsFragment"
-        android:label="ConnectionsFragment" />
+        android:label="ConnectionsFragment" >
+        <action
+            android:id="@+id/action_connectionsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.techskaud.bmidieasestracker.ui.fragment.onboarding_screen.OnBoardingFragment"
@@ -39,5 +43,9 @@
             app:exitAnim="@anim/exit"
             />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.techskaud.bmidieasestracker.ui.fragment.home.HomeFragment"
+        android:label="HomeFragment" />
 
 </navigation>

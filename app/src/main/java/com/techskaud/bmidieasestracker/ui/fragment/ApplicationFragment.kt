@@ -1,6 +1,7 @@
 package com.techskaud.bmidieasestracker.ui.fragment
 
 import android.view.View
+import androidx.navigation.findNavController
 import com.example.woohoo.base.BaseFragment
 import com.techskaud.bmidieasestracker.R
 import kotlinx.android.synthetic.main.application_fragment.*
@@ -45,6 +46,10 @@ class ApplicationFragment : BaseFragment() {
             imgGarminSelected.visibility = View.VISIBLE
             imgsamsungFitSelected.visibility = View.GONE
             imgMiFitSelected.visibility = View.GONE
+        }
+
+        txtConnect.setOnClickListener {
+            it.findNavController().navigate(R.id.action_connectionsFragment_to_homeFragment)
         }
     }
 

@@ -9,19 +9,25 @@
         <entry key="app/src/main/res/drawable/curve_backgroung.xml" value="0.13703703703703704" />
         <entry key="app/src/main/res/drawable/grey_rounded_corner_bg.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/ic_google_fit.xml" value="0.13425925925925927" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/rounded_blue_bg.xml" value="0.13425925925925927" />
         <entry key="app/src/main/res/drawable/warning_curve.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/white_cricle.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/white_cricle_blue_stroke.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/white_rounded_button_bg.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/white_sircle.xml" value="0.23796296296296296" />
+        <entry key="app/src/main/res/drawable/your_color_selector.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15185185185185185" />
         <entry key="app/src/main/res/layout/application_fragment.xml" value="0.29022988505747127" />
         <entry key="app/src/main/res/layout/application_list.xml" value="0.45" />
         <entry key="app/src/main/res/layout/connection_fragment.xml" value="0.27977839335180055" />
+        <entry key="app/src/main/res/layout/data_list_frag.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/device_fragment.xml" value="0.14351851851851852" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.23802083333333332" />
+        <entry key="app/src/main/res/layout/hospital_list_frag.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/loader_half__layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/onboarding_fragment.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/search_frag.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/splash_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/waring_one.xml" value="0.2375" />
         <entry key="app/src/main/res/layout/waring_screen_one.xml" value="0.25" />

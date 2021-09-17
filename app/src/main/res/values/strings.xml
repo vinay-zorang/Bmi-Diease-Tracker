@@ -20,5 +20,14 @@
     <string name="third_screen_warning"><font color="#FFCED1D1">Our service is not a medical service.</font> \n\nConsult a specialist for advice. The information provided in this application is for informational purpose only and should not be used for diagnosis or treatment.</string>
     <string name="come_in">Come In</string>
     <string name="don_t_show_again_show">Don\'t show again show  </string>
+    <string name="level_of_risk">Level Of Risk</string>
+    <string name="middle">Middle</string>
+    <string name="body_mass_index">Body mass index is a value that allows you to assess the degree of correspondence between a person\'s weight and his height.</string>
+    <string name="_60">60%</string>
+    <string name="probility_dying">The probability of dying in the next 10 yers from cardiovascular diseases.</string>
+    <string name="consult_a_specialist_it_is_not_a_medical_application">Consult a specialist. It is not a medical application.</string>
+    <string name="your_cancer_risks_are_same_like_other_people_with_normal_weight">Your cancer risks are same like other people with normal weight.</string>
+    <string name="view_report">View Report</string>
+    <string name="data_available">(Data Available)</string>
 
 </resources>

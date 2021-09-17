@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
-        android:background="@drawable/blue_gradient_background"
+        android:background="@color/blue"
         >
         <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"

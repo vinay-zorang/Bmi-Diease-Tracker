@@ -4,7 +4,7 @@ package com.techskaud.bmidieasestracker.ui.fragment.home
 import com.example.woohoo.base.BaseFragment
 import com.google.android.material.tabs.TabLayout
 import com.techskaud.bmidieasestracker.R
-import kotlinx.android.synthetic.main.connection_fragment.*
+import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : BaseFragment() {
     override fun getLayoutID(): Int {

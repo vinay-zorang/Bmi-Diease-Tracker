@@ -8,13 +8,17 @@ class DataModel(
     val image:Int,
     val dataType:String,
     val typeOrQuantity: String,
-    val color:String
-) : AbstractModel() {
+    val color:String,
+    val description : String,
+    var isSelected :Int =0
+):AbstractModel() {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readString().toString()
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readInt()
     ) {
     }
 
@@ -23,6 +27,8 @@ class DataModel(
         parcel.writeString(dataType)
         parcel.writeString(typeOrQuantity)
         parcel.writeString(color)
+        parcel.writeString(description)
+        parcel.writeInt(isSelected)
     }
 
     override fun describeContents(): Int {

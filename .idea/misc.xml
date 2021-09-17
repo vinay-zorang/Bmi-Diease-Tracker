@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_forward.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/ic_google_fit.xml" value="0.13425925925925927" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.23796296296296296" />
+        <entry key="app/src/main/res/drawable/light_green_view_bg.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/one_side_red_rounded.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/red_border_bg.xml" value="0.23796296296296296" />
         <entry key="app/src/main/res/drawable/rounded_blue_bg.xml" value="0.13425925925925927" />
@@ -35,6 +36,7 @@
         <entry key="app/src/main/res/layout/hospital_list_frag.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/loader_half__layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/onboarding_fragment.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/quite_task_edit_fragment.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/report_fragment.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/search_frag.xml" value="0.43737166324435317" />
         <entry key="app/src/main/res/layout/splash_fragment.xml" value="0.25" />

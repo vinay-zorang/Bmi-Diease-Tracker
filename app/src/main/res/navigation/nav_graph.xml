@@ -20,6 +20,9 @@
             app:enterAnim="@anim/pop_enter"
             app:exitAnim="@anim/exit"
             />
+        <action
+            android:id="@+id/action_splashFragment_to_quiteTaskEditFragment"
+            app:destination="@id/quiteTaskEditFragment" />
 
     </fragment>
     <fragment
@@ -48,5 +51,9 @@
         android:id="@+id/homeFragment"
         android:name="com.techskaud.bmidieasestracker.ui.fragment.home.HomeFragment"
         android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/quiteTaskEditFragment"
+        android:name="com.techskaud.bmidieasestracker.ui.fragment.time_tracker.QuiteTaskEditFragment"
+        android:label="QuiteTaskEditFragment" />
 
 </navigation>

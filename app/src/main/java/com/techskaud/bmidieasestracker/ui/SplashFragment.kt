@@ -16,7 +16,7 @@ class SplashFragment : BaseFragment() {
     }
     fun navigateUpto(){
         Handler(Looper.getMainLooper()).postDelayed({
-         findNavController().navigate(R.id.action_splashFragment_to_onBoardingFragment)
+         findNavController().navigate(R.id.action_splashFragment_to_quiteTaskEditFragment)
         },1000)
     }
 }

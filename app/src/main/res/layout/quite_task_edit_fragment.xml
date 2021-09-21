@@ -64,6 +64,32 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSetTimeTracker"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/clTimePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:minWidth="300dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/light_green_view_bg"
+        >
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/set_tracker"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 

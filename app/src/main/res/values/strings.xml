@@ -32,5 +32,10 @@
     <string name="congratulations_non_your_decision_to_quit_your_s_bad_habit">Congratulations\non your decision to quit your\'s bad habit!</string>
     <string name="when_did_you_quit">When did you quit?</string>
     <string name="_17_september_2021_05_12_pm">17 September 2021, 05:12 PM</string>
+    <string name="set_tracker">Set Tracker</string>
+    <string name="progress">Progress</string>
+    <string name="enjoying_quit_tracker">Enjoying Quit Tracker?</string>
+    <string name="day_1">Day 1</string>
+    <string name="smoke_free">Smoke Free</string>
 
 </resources>

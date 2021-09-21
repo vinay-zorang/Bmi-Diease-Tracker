@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.DatePicker
 import android.widget.TimePicker
 import androidx.annotation.RequiresApi
+import androidx.navigation.fragment.findNavController
 import com.example.woohoo.base.BaseFragment
 import com.techskaud.bmidieasestracker.R
 import com.techskaud.bmidieasestracker.utilities.Utils
@@ -35,6 +36,9 @@ class QuiteTaskEditFragment : BaseFragment(), DatePickerDialog.OnDateSetListener
             getDateCalendar()
             DatePickerDialog(requireContext(), this, year, month, day).show()
         }
+        clSetTimeTracker.setOnClickListener {
+            findNavController().navigate(R.id.action_quiteTaskEditFragment_to_progressTimeTracker)
+        }
     }
 
     //get the current date
@@ -61,7 +65,6 @@ class QuiteTaskEditFragment : BaseFragment(), DatePickerDialog.OnDateSetListener
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         hour = hourOfDay
         this.minute = minute
-
         val time = Utils.dateTimeConverter(year,month,day,hour,minute)
         txtTime.text = time
 

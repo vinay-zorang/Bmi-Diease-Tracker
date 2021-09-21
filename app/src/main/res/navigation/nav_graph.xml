@@ -54,6 +54,14 @@
     <fragment
         android:id="@+id/quiteTaskEditFragment"
         android:name="com.techskaud.bmidieasestracker.ui.fragment.time_tracker.QuiteTaskEditFragment"
-        android:label="QuiteTaskEditFragment" />
+        android:label="QuiteTaskEditFragment" >
+        <action
+            android:id="@+id/action_quiteTaskEditFragment_to_progressTimeTracker"
+            app:destination="@id/progressTimeTracker" />
+    </fragment>
+    <fragment
+        android:id="@+id/progressTimeTracker"
+        android:name="com.techskaud.bmidieasestracker.ui.fragment.time_tracker.ProgressTimeTracker"
+        android:label="ProgressTimeTracker" />
 
 </navigation>

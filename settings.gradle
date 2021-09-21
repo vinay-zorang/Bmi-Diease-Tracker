@@ -7,4 +7,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "BmiDieasesTracker"
-include ':app'
+include ':app',':library'

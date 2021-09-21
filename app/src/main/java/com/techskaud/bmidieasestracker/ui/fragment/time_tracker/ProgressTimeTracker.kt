@@ -1,35 +1,54 @@
 package com.techskaud.bmidieasestracker.ui.fragment.time_tracker
 
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.DatePickerDialog
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
-import android.widget.TextView
-import androidx.navigation.fragment.findNavController
+import android.widget.DatePicker
+import androidx.annotation.RequiresApi
 import com.example.woohoo.base.BaseFragment
 import com.techskaud.bmidieasestracker.R
+import com.techskaud.bmidieasestracker.utilities.DaysCalculations
+import com.techskaud.bmidieasestracker.utilities.Utils
 import kotlinx.android.synthetic.main.progress_time_tracker_frag.*
 import java.util.*
 
-class ProgressTimeTracker : BaseFragment() {
-
+class ProgressTimeTracker : BaseFragment(),DatePickerDialog.OnDateSetListener {
     private var sec = 0
     private var isRunning = false
     private var wasRunning = false
+    private var dateTime = ""
+    private var day = 0
+    private var month = 0
+    private var year = 0
+    private var hour =0
+    private var min=0
     override fun getLayoutID(): Int {
         return R.layout.progress_time_tracker_frag
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView() {
         init()
         onClick()
     }
 
     fun init() {
-        isRunning=true
+        arguments.let {
+            dateTime = it?.getString("Time").toString()
+        }
+        val time = DaysCalculations.calculateTimeBetweenDates(dateTime)
+        Log.e("Time", "init: $time")
+
+        isRunning = true
         startTimer()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun onClick() {
         imgRefresh.setOnClickListener {
             isRunning = true
@@ -43,6 +62,9 @@ class ProgressTimeTracker : BaseFragment() {
         }
         llYes.setOnClickListener {
             goBack()
+        }
+        txtDay.setOnClickListener {
+            showHorizontalCal()
         }
     }
 
@@ -77,10 +99,7 @@ class ProgressTimeTracker : BaseFragment() {
                         minutes_var,
                         secs_var
                     )
-                    txtSmokeFreeTime.text = time_value
-                    if (isRunning) {
-                        sec++
-                    }
+
                     if (timeInMin == 0) {
                         setProgressBar(minutes_var)
                         timeInMin = minutes_var
@@ -90,6 +109,11 @@ class ProgressTimeTracker : BaseFragment() {
                         }
                         timeInMin = minutes_var
                     }
+                    txtSmokeFreeTime.text = time_value
+                    if (isRunning) {
+                        sec++
+                    }
+
 
                     hd.postDelayed(this, 1000)
                 }
@@ -97,8 +121,44 @@ class ProgressTimeTracker : BaseFragment() {
         })
     }
 
-    private fun setProgressBar(min:Int){
+    private fun setProgressBar(min: Int) {
         arc_progress.setProgress((Math.random() * min).toFloat())
+    }
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun showHorizontalCal(){
+        getDateCalendar()
+        val datePickerDialog = DatePickerDialog(
+            requireActivity(), this, year, month,
+            day
+        )
+
+        datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
+        datePickerDialog.show()
+
+    }
+    //get the current date
+    private fun getDateCalendar() {
+        val cal = Calendar.getInstance()
+        day = cal.get(Calendar.DAY_OF_MONTH)
+        month = cal.get(Calendar.MONTH)
+        year = cal.get(Calendar.YEAR)
+        hour = cal.get(Calendar.HOUR_OF_DAY)
+        min  = cal.get(Calendar.MINUTE)
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        getDateCalendar()
+        val yesterdayDate = DaysCalculations.getYesterdayDate()
+        val dateSelected = Utils.dateTimeConverter(year,month,dayOfMonth,hour,min)
+        if (dateSelected == yesterdayDate){
+            txtDay.text ="Yesterday"
+        }else{
+            txtDay.text = Utils.dateTimeConverterWithMonthName(year,month,dayOfMonth,hour,min)
+        }
+
     }
 
 }

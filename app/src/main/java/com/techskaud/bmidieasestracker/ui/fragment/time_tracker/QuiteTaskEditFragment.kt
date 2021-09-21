@@ -3,6 +3,7 @@ package com.techskaud.bmidieasestracker.ui.fragment.time_tracker
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Build
+import android.os.Bundle
 import android.util.Log
 import android.widget.DatePicker
 import android.widget.TimePicker
@@ -13,6 +14,8 @@ import com.techskaud.bmidieasestracker.R
 import com.techskaud.bmidieasestracker.utilities.Utils
 import kotlinx.android.synthetic.main.quite_task_edit_fragment.*
 import java.util.*
+import com.google.android.material.datepicker.MaterialDatePicker.Builder.datePicker
+
 
 class QuiteTaskEditFragment : BaseFragment(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
@@ -21,12 +24,13 @@ class QuiteTaskEditFragment : BaseFragment(), DatePickerDialog.OnDateSetListener
     private var year = 0
     private var hour = 0
     private var minute = 0
+    private var time =""
     override fun getLayoutID(): Int {
         return R.layout.quite_task_edit_fragment
     }
 
     override fun onCreateView() {
-        val time = Utils.getCurrentDateAndTime()
+        time = Utils.getCurrentDateAndTime()
         txtTime.text = time
         onClickEvents()
     }
@@ -34,11 +38,22 @@ class QuiteTaskEditFragment : BaseFragment(), DatePickerDialog.OnDateSetListener
     fun onClickEvents() {
         clTimePicker.setOnClickListener {
             getDateCalendar()
-            DatePickerDialog(requireContext(), this, year, month, day).show()
+            val datePickerDialog = DatePickerDialog(
+                requireActivity(), this, year, month,
+                day
+            )
+            datePickerDialog.datePicker.minDate = System.currentTimeMillis()
+            datePickerDialog.datePicker.maxDate = System.currentTimeMillis()
+            datePickerDialog.show()
         }
         clSetTimeTracker.setOnClickListener {
-            findNavController().navigate(R.id.action_quiteTaskEditFragment_to_progressTimeTracker)
+            val bundle = Bundle()
+            bundle.putString("Time",time)
+            findNavController().navigate(R.id.action_quiteTaskEditFragment_to_progressTimeTracker,bundle)
         }
+
+
+
     }
 
     //get the current date
@@ -65,7 +80,7 @@ class QuiteTaskEditFragment : BaseFragment(), DatePickerDialog.OnDateSetListener
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         hour = hourOfDay
         this.minute = minute
-        val time = Utils.dateTimeConverter(year,month,day,hour,minute)
+        time = Utils.dateTimeConverter(year,month,day,hour,minute)
         txtTime.text = time
 
     }

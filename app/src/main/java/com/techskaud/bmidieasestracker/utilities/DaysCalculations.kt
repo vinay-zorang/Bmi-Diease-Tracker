@@ -1,17 +1,17 @@
 package com.techskaud.bmidieasestracker.utilities
 
+import android.annotation.SuppressLint
 import java.sql.Date
 import java.sql.Timestamp
 import java.text.SimpleDateFormat
+import java.util.*
 
 object DaysCalculations {
-
-    //todo: Change it so it returns a string to display to the textView of the habit item
     fun calculateTimeBetweenDates(startDate: String): String {
 
         val endDate = timeStampToString(System.currentTimeMillis())
 
-        val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm")
+        val sdf = SimpleDateFormat("dd MMMM yyyy, hh:mm a")
         val date1 = sdf.parse(startDate)
         val date2 = sdf.parse(endDate)
 
@@ -48,41 +48,42 @@ object DaysCalculations {
         }
     }
 
-    private fun timeStampToString(timeStamp: Long): String {
+     fun timeStampToString(timeStamp: Long): String {
         val stamp = Timestamp(timeStamp)
-        val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm")
+        val sdf = SimpleDateFormat(Constants.DATE_FORMAT)
         val date = sdf.format(Date(stamp.time))
 
         return date.toString()
     }
 
-    fun cleanDate(_day: Int, _month: Int, _year: Int): String {
-        var day = _day.toString()
-        var month = _month.toString()
-
-        if (_day < 10) {
-            day = "0$_day"
+    /*compare date and time*/
+    @SuppressLint("SimpleDateFormat")
+    fun compareDateAndTime(currenDateAndTime: String, selectedDateAndTime: String): Boolean {
+        var isDateCompare = false
+        val sdformat = SimpleDateFormat(Constants.DATE_FORMAT)
+        val d1 = sdformat.parse(currenDateAndTime)
+        val d2 = sdformat.parse(selectedDateAndTime)
+        if (d1.compareTo(d2) > 0) {
+            // When Date d1 > Date d2
+            isDateCompare = false
+        } else if (d1.compareTo(d2) < 0) {
+            // When Date d1 < Date d2
+            isDateCompare = true
+            println("Date 1 occurs before Date 2")
+        } else if (d1.compareTo(d2) === 0) {
+            // When Date d1 = Date d2
+            isDateCompare = false
+            println("Both dates are equal")
         }
-
-        if (_month < 9) { //Because the month instance we retrieve starts at 0 and it's stupid!
-            month = "0${_month + 1}"
-        } else if (_month >= 9 && _month <= 11) {
-            month = (_month + 1).toString()
-        }
-
-        return "$day/$month/$_year"
+        return isDateCompare
     }
 
-    fun cleanTime(_hour: Int, _minute: Int): String {
-        var hour = _hour.toString()
-        var minute = _minute.toString()
-
-        if (_hour < 10) {
-            hour = "0$_hour"
-        }
-        if (_minute < 10) {
-            minute = "0$_minute"
-        }
-        return "$hour:$minute"
+    fun getYesterdayDate(): String {
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.DATE, -1)
+        val time = calendar.time
+        val pp = SimpleDateFormat(Constants.DATE_FORMAT)
+        val selectTimeForReminder = pp.format(time).toString()
+        return selectTimeForReminder
     }
 }

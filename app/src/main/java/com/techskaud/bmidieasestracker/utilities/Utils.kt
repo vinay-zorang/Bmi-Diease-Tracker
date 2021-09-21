@@ -96,8 +96,16 @@ object Utils {
     fun dateTimeConverter(year:Int,month:Int,day:Int,hour:Int,minute:Int):String{
         val calendar = Calendar.getInstance()
         calendar.set(year,month,day,hour,minute)
+        val format = SimpleDateFormat(Constants.DATE_FORMAT)
+        val strDate: String = format.format(calendar.time)
+        return  strDate
+    }
 
-        val format = SimpleDateFormat("dd MMMM yyyy, hh:mm a")
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun dateTimeConverterWithMonthName(year:Int,month:Int,day:Int,hour:Int,minute:Int):String{
+        val calendar = Calendar.getInstance()
+        calendar.set(year,month,day,hour,minute)
+        val format = SimpleDateFormat(Constants.DATE_FORMAT_MONTH)
         val strDate: String = format.format(calendar.time)
         return  strDate
     }
